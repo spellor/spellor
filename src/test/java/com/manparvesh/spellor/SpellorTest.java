@@ -16,21 +16,14 @@ import static org.junit.Assert.assertEquals;
 public class SpellorTest {
 
     private Spellor spellorSimple;
-    private Spellor spellorAdvanced;
 
     @Before
     public void setUp() {
-        spellorSimple = new Spellor(SIMPLE_CONFIG);
-        spellorAdvanced = new Spellor(ADVANCED_CONFIG);
+        spellorSimple = new Spellor();
     }
 
     @Test
     public void testSimple(){
-    }
-
-    @Test
-    public void testTrainOnData(){
-        spellorSimple.train();
         assertEquals("spelling", spellorSimple.correction("spelaing"));
         assertEquals("medieval", spellorSimple.correction("mediieval"));
     }
